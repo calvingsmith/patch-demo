@@ -1,0 +1,7 @@
+---
+# handlers file for change-banner
+#
+- name: Restart sshd
+  service:
+    name: sshd
+    state: restarted

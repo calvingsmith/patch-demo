@@ -9,7 +9,7 @@
     group: root
     mode: 0644
 
-- name: UIpdate banner for ssh
+- name: Update banner for ssh
   lineinfile:
       dest: /etc/ssh/sshd_config
       regexp: "(?i)^#?Banner"

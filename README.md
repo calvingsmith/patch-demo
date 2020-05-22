@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Change banner role. A simple role to change the banner of the server
 
 Requirements
 ------------

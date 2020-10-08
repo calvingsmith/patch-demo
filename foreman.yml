@@ -1,0 +1,6 @@
+# my.foreman.yml
+plugin: redhat.satellite.foreman
+url: http://satellite.demo.net:3000
+user: admin
+password: redhat
+validate_certs: False

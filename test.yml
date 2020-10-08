@@ -1,6 +1,7 @@
 - hosts: all
   tasks:
-    - redhat.satellite.status_info
-      server_url: "https://satellite.demo.net"
-      username: "admin"
-      password: "redhat"
+    - name: get status
+      redhat.satellite.status_info
+        server_url: "https://satellite.demo.net"
+        username: "admin"
+        password: "redhat"

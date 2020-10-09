@@ -1,0 +1,22 @@
+# Promote content view and initiate patching of server
+- hosts: localhost
+  gather_facts: no
+  vars:
+    - publish_cv: false
+
+  tasks: 
+    - name: publish content view
+      redhat.satellite.content_view_version:
+        content_view: "rhel 7 base"
+        organization: "Demo Organization"
+      when: (publish_cv)
+
+    - name: promote content view
+      redhat.satellite.content_view_version:
+        content_view: "rhel 7 base"
+        organization: "Demo Organization"
+        current_lifecycle_environment: Library
+        lifecycle_environments:
+          - Field
+
+    

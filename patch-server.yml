@@ -1,0 +1,12 @@
+# Promote content view and initiate patching of server
+- hosts: all
+  become: yes
+  remote_user: rex
+
+  tasks: 
+    - name: update server
+      yum:
+        name: '*' 
+        state: latest
+
+    

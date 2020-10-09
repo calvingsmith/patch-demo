@@ -1,0 +1,15 @@
+# Generate patch report and email to user
+- hosts: localhost
+  gather_facts: no
+  vars:
+    - patch_target: canes-wks.demo.net
+    - email_dest: calvin@mail.demo.net
+
+  tasks: 
+    - name: generate and mail server report
+      delegate_to: satellite.demo.net
+      remote_user: root
+      shell: hammer report-template schedule --wait --gzip false --name "My Applicable errata" --report-format=html --mail-to="calvin@mail.demo.net" --inputs "Hosts filter"={{ patch_target }} --organization-id 1
+      ignore_errors: yes
+
+    

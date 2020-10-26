@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: no
   vars:
-    - patch_target: canes-field.demo.net
+    - patch_target: acme-*.demo.net
     - email_dest: calvin@mail.demo.net
 
   tasks: 

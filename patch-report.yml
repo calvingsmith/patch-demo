@@ -9,7 +9,7 @@
     - name: generate and mail server report
       delegate_to: satellite.demo.net
       remote_user: root
-      shell: hammer report-template schedule --wait --gzip false --name "My Applicable errata" --report-format=html --mail-to="calvin@mail.demo.net" --inputs "Hosts filter"={{ patch_target }} --organization-id 1 ; return 0
+      shell: hammer report-template schedule --wait --gzip false --name "My Applicable errata" --report-format=html --mail-to="calvin@mail.demo.net" --inputs "Hosts filter"={{ patch_target }} --organization-id 1 ; exit 0
       ignore_errors: yes
 
     

@@ -7,13 +7,13 @@
   tasks: 
     - name: publish content view
       redhat.satellite.content_view_version:
-        content_view: "rhel 7 base"
+        content_view: "rhel 7 test"
         organization: "Demo Organization"
       when: (publish_cv)
 
     - name: promote content view
       redhat.satellite.content_view_version:
-        content_view: "rhel 7 base"
+        content_view: "rhel 7 test"
         organization: "Demo Organization"
         current_lifecycle_environment: Library
         lifecycle_environments:

@@ -1,5 +1,5 @@
 # Promote content view and initiate patching of server
-- hosts: all
+- hosts: {{ servername }}
   become: yes
   remote_user: rex
   serial: 1

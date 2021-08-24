@@ -1,0 +1,8 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: get status
+      redhat.satellite.status_info:
+        server_url: "https://satellite.demo.net"
+        username: "admin"
+        password: "redhat"

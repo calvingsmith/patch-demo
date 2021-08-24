@@ -1,0 +1,26 @@
+#
+# Playbook to update servers in serial fashion and reboot if required
+# 
+- hosts: all
+  serial: 1 
+  tasks:
+  - name: ensure yum-utils is installed
+    yum:
+      name: yum-utils
+      state: installed
+
+  - name: Update server
+    yum:
+      name: "*"
+      state: latest
+
+  - name: determine if reboot  needed
+    shell: /bin/needs-restarting -r
+    register: result
+    ignore_errors: true
+ 
+  - name: reboot if needed
+    reboot:
+      reboot_timeout: 3600
+    when: result.rc != 0
+
